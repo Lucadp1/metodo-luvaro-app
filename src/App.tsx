@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { TokenProvider } from './contexts/TokenContext';
 import { DoctorLayout } from './components/layout';
 import {
   PrivacyPolicy,
@@ -24,7 +23,6 @@ import { PazienteDashboardPage } from './pages/PazienteDashboardPage';
 function App() {
   return (
     <BrowserRouter>
-      <TokenProvider>
         <Routes>
           <Route path="/" element={<DoctorLayout />}>
             <Route index element={<DoctorDashboard />} />
@@ -45,7 +43,6 @@ function App() {
           <Route path="/health-data-info" element={<HealthDataInfo />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </TokenProvider>
     </BrowserRouter>
   );
 }
