@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodo Luvaro - Sistema di Gestione Nutrizionale</title>
+    <meta name="description" content="Sistema di gestione nutrizionale professionale Metodo Luvaro" />
+    <meta name="theme-color" content="#14B8A6" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Metodo Luvaro" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MF9LWEXD0H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MF9LWEXD0H');
+    </script>
+        <!-- iubenda Cookie Solution -->
+        <script type="text/javascript" src="https://embeds.iubenda.com/widgets/416b30-4f6d-ae7d-b2e803a46e50.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      localStorage.setItem("NM_DEV_BYPASS", "1");
+      console.log("Dev bypass attivato per mockProfile");
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('Service Worker registered:', registration);
+            })
+            .catch((error) => {
+              console.log('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
